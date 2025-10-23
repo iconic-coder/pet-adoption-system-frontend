@@ -11,6 +11,8 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-50">
         <NavBar />
+        <PetDetails/>
+        <Form data={data} setData={setData} />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
