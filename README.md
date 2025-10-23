@@ -1,16 +1,77 @@
-# React + Vite
+# 🐾 Paw Adoption - Pet Adoption System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based pet adoption platform that connects loving families with pets in need of homes. Users can browse available pets, submit adoption applications, and surrender pets through an intuitive interface.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse available pets with search and filter functionality
+- View detailed pet profiles with photos and information
+- Submit adoption applications through secure forms
+- Pet surrender system for owners who need to rehome their pets
+- Responsive design with Tailwind CSS
+- Client-side routing with React Router
 
-## React Compiler
+## 🚀 Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd pet-adoption-system-frontend
+```
 
-## Expanding the ESLint configuration
+2. Install dependencies:
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18, Vite
+- **Routing**: React Router DOM
+- **Styling**: Tailwind CSS
+- **Backend**: JSON Server (for development)
+
+## 📁 Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── pages/         # Route components
+├── forms/         # Form components
+└── App.jsx        # Main application component
+```
+
+## 🤝 Contributors
+
+- Martin Mwangi - Full Stack Developer
+
+## 🌐 Deployment
+
+**Live Demo**: [Coming Soon]
+
+**Frontend**: Deployed on Netlify  
+**Backend**: Deployed on Render
+
+## 📝 API Endpoints
+
+- `GET /pets` - Fetch all available pets
+- `POST /pets` - Add a new pet for adoption
+- `POST /applications` - Submit adoption application
+
+## 🔧 Development
+
+To run the backend server:
+```bash
+json-server --watch db.json --port 3001
+```
+
+## 📄 License
+
+This project is licensed under the MIT License.
