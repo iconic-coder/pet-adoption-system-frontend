@@ -1,58 +1,59 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NAV_LINKS = [
-  { path: '/', label: 'Home', icon: '🏠' },
-  { path: '/adopt', label: 'Adopt', icon: '🐾' },
-  { path: '/give-up-pet', label: 'Surrender', icon: '📝' },
-  { path: '/contact', label: 'Contact', icon: '📞' }
+  { to: '/', label: 'Home' },
+  { to: '/adopt', label: 'Adopt' },
+  { to: '/give-up-pet', label: 'Surrender' },
+  { to: '/contact', label: 'Contact' }
 ];
 
 function NavBar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-
-  const isActiveLink = (path) => location.pathname === path;
-
   return (
-    <nav className="bg-white shadow-lg border-b border-gray-100 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center space-x-3" aria-label="home">
-            <span className="text-3xl">🐾</span>
-            <span className="text-2xl font-bold gradient-text">Paw Adoption</span>
-          </Link>
+    <nav style={{
+      background: 'rgba(255, 255, 255, 0.98)',
+      backdropFilter: 'blur(25px)',
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+      position: 'sticky',
+      top: 0,
+      zIndex: 50,
+      borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        height: '70px',
+        padding: '0 2rem'
+      }}>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+          <span style={{ fontSize: '2rem' }}>🐾</span>
+          <span className="gradient-text" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Paw Adoption</span>
+        </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map(({ path, label, icon }) => (
-              <Link
-                key={path}
-                to={path}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${isActiveLink(path) ? 'bg-purple-100 text-purple-700' : 'hover:bg-gray-50'}`}
-                aria-current={isActiveLink(path) ? 'page' : undefined}
-              >
-                <span>{icon}</span>
-                <span>{label}</span>
-              </Link>
-            ))}
-            <button className="px-4 py-2 bg-purple-600 text-white rounded-lg">Sign In</button>
-          </div>
-
-          <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-expanded={isMobileMenuOpen}>
-            <span className="text-2xl">☰</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          {NAV_LINKS.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className="nav-link"
+              style={{
+                textDecoration: 'none',
+                padding: '0.5rem 1rem',
+                borderRadius: '8px',
+                fontWeight: '500',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+          <button className="btn-primary" style={{ fontSize: '14px' }}>
+            Sign In
           </button>
         </div>
-
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4">
-            {NAV_LINKS.map(({ path, label, icon }) => (
-              <Link key={path} to={path} className={`block px-4 py-2 rounded-lg ${isActiveLink(path) ? 'bg-purple-100 text-purple-700' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>
-                <span className="mr-2">{icon}</span>
-                {label}
-              </Link>
-            ))}
-          </div>
-        )}
       </div>
     </nav>
   );

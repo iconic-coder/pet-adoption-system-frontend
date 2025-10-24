@@ -10,7 +10,11 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
+      <div style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 25%, #4facfe 75%, #00f2fe 100%)',
+        backgroundAttachment: 'fixed'
+      }}>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />

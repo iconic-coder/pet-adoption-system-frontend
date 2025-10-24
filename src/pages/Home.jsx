@@ -5,8 +5,8 @@ function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="hero-section py-20">
-        <div className="max-w-6xl mx-auto px-4 text-center">
+      <section className="hero-section" style={{ padding: '5rem 2rem' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
           <h1 className="text-6xl font-bold gradient-text mb-6">
             Find Your Perfect Companion
           </h1>
@@ -25,8 +25,8 @@ function Home() {
       </section>
 
       {/* Search Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
+      <section style={{ padding: '4rem 2rem', background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(15px)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Search Available Pets</h2>
             <div className="max-w-md mx-auto mb-8">
@@ -55,8 +55,8 @@ function Home() {
       </section>
 
       {/* Featured Pets */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
+      <section style={{ padding: '4rem 2rem', background: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(15px)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Featured Pets</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[1, 2, 3].map((pet) => (
@@ -79,8 +79,8 @@ function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section style={{ padding: '4rem 2rem', background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(15px)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
           <h2 className="text-3xl font-bold text-gray-800 mb-12">Our Impact</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6">
