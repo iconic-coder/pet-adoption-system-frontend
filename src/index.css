@@ -12,20 +12,90 @@
   .btn-primary {
     @apply bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium;
   }
-  
+
   .btn-secondary {
     @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors font-medium;
   }
-  
+
   .card {
     @apply bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow;
   }
-  
+
   .gradient-text {
     @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
   }
-  
+
   .hero-section {
     @apply bg-gradient-to-br from-blue-50 via-white to-purple-50;
+  }
+
+  /* Navigation enhancements */
+  nav {
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  }
+
+  nav .text-2xl {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  nav button {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  nav button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Form styling */
+  input, textarea, select {
+    transition: all 0.3s ease;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  }
+
+  /* Button & card hover enhancements */
+  button {
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: translateY(-1px);
+  }
+
+  .card, [class*="card"] {
+    transition: all 0.3s ease;
+  }
+
+  .card:hover, [class*="card"]:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Loading animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem;
+    }
+
+    /* Prefer targeting utility combos in markup; keep for compatibility */
+    nav .flex.items-center.space-x-8 {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 }
