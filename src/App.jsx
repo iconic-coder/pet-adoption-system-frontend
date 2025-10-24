@@ -5,7 +5,6 @@ import Home from './pages/Home';
 import Adopt from './pages/Adopt';
 import GiveUpPet from './pages/GiveUpPet';
 import Contact from './pages/Contact';
-import './App.css';
 
 function App() {
   return (
@@ -16,12 +15,16 @@ function App() {
         backgroundAttachment: 'fixed'
       }}>
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/adopt" element={<Adopt />} />
-          <Route path="/give-up-pet" element={<GiveUpPet />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <PetDetails/>
+        <Form data={data} setData={setData} />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/adopt" element={<Adopt />} />
+            <Route path="/give-up-pet" element={<GiveUpPet />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
