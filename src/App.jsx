@@ -9,7 +9,11 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 25%, #4facfe 75%, #00f2fe 100%)',
+        backgroundAttachment: 'fixed'
+      }}>
         <NavBar />
         <PetDetails/>
         <Form data={data} setData={setData} />
